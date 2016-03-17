@@ -14,7 +14,7 @@ module.exports = Backbone.View.extend({
     this.model.set({
       photo: this.$el.find('input[name="photo"]').val(),
       location: this.$el.find('input[name="location"]').val(),
-      description: this.$el.find('textarea[name="description"]').val(),
+      description: this.$el.find('textarea[name="description"]').val()
     });
     this.model.save();
     this.collection.add(this.model);

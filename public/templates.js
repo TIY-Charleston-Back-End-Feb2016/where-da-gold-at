@@ -2,8 +2,7 @@ module.exports = {
   sighting: [
     "<img src='<%= photo %>'>",
     "<h3>Location: <%= location %></h3>",
-    "<p><%= description %>",
-    "<blockquote>sighting by: <%= user.name %></blockquote>"
+    "<p><%= description %>"
   ].join(''),
   form: [
     '<form class="">',

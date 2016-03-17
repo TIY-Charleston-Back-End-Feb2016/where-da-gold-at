@@ -18,6 +18,7 @@ var ModelView = require('./modelView');
 module.exports = Backbone.View.extend({
   el: '.content',
   initialize: function () {
+    this.addAll();
     this.listenTo(this.collection, 'update', this.addAll);
   },
   addOne: function (model) {
@@ -46,7 +47,7 @@ module.exports = Backbone.View.extend({
     this.model.set({
       photo: this.$el.find('input[name="photo"]').val(),
       location: this.$el.find('input[name="location"]').val(),
-      description: this.$el.find('textarea[name="description"]').val(),
+      description: this.$el.find('textarea[name="description"]').val()
     });
     this.model.save();
     this.collection.add(this.model);
@@ -13424,8 +13425,7 @@ module.exports = {
   sighting: [
     "<img src='<%= photo %>'>",
     "<h3>Location: <%= location %></h3>",
-    "<p><%= description %>",
-    "<blockquote>sighting by: <%= user.name %></blockquote>"
+    "<p><%= description %>"
   ].join(''),
   form: [
     '<form class="">',
