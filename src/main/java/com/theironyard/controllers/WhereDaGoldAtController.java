@@ -66,9 +66,9 @@ public class WhereDaGoldAtController {
     public Sighting addSighting(@RequestBody Sighting sighting, HttpSession session) throws Exception {
         String userName = (String) session.getAttribute("userName");
         User user = users.findByName(userName);
-        if (user == null) {
-            throw new Exception("Not logged in.");
-        }
+//        if (user == null) {
+//            throw new Exception("Not logged in.");
+//        }
         sighting.setUser(user);
         sightings.save(sighting);
         return sighting;
