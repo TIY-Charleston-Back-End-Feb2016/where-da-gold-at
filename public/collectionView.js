@@ -6,6 +6,7 @@ var ModelView = require('./modelView');
 module.exports = Backbone.View.extend({
   el: '.content',
   initialize: function () {
+    this.addAll();
     this.listenTo(this.collection, 'update', this.addAll);
   },
   addOne: function (model) {
