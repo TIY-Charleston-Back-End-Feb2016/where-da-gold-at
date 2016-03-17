@@ -28,6 +28,9 @@ public class Sighting {
     @ManyToOne
     User user;
 
+    @Transient
+    String timeText;
+
     public Sighting() {
     }
 
@@ -85,5 +88,13 @@ public class Sighting {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getTimeText() {
+        return String.format("%s, %s %s %s at %s:%s", time.getDayOfWeek(), time.getMonth(), time.getDayOfMonth(), time.getYear(), time.getHour(), time.getMinute());
+    }
+
+    public void setTimeText(String timeText) {
+        this.timeText = timeText;
     }
 }
