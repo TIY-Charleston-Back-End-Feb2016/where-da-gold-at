@@ -19,7 +19,6 @@ public class Sighting {
     @Column(nullable = false)
     String description;
 
-    @Column(nullable = false)
     LocalDateTime time;
 
     @Column(nullable = false)
@@ -91,7 +90,10 @@ public class Sighting {
     }
 
     public String getTimeText() {
-        return String.format("%s, %s %s %s at %s:%s", time.getDayOfWeek(), time.getMonth(), time.getDayOfMonth(), time.getYear(), time.getHour(), time.getMinute());
+        if (time != null) {
+            return String.format("%s, %s %s %s at %s:%s", time.getDayOfWeek(), time.getMonth(), time.getDayOfMonth(), time.getYear(), time.getHour(), time.getMinute());
+        }
+        return "";
     }
 
     public void setTimeText(String timeText) {
